@@ -1,0 +1,11 @@
+// here a sentence is given and is asked to check whether it is valid palindrome or not
+class Solution(object):
+    def isPalindrome(self, s):
+        """
+        :type s: str
+        :rtype: bool
+        """
+        
+        b="".join(ch for ch in s if ch.isalnum())
+        b=b.lower()
+        return b==b[::-1]
