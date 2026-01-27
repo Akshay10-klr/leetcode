@@ -1,0 +1,21 @@
+class Solution(object):
+    def isValid(self, s):
+        """
+        :type s: str
+        :rtype: bool
+        """
+        s1=[]
+        m={
+            ')':'(',
+            ']':'[',
+            '}':'{'
+        }
+        for i in s:
+            if i in m:
+                if s1 and s1[-1]==m[i]:
+                    s1.pop()
+                else:
+                    return False
+            else:
+                s1.append(i)
+        return len(s1)==0                    
